@@ -6,7 +6,7 @@
 angular.module("MyApp", [])
 // The code below is for using the global scope, $rootScope
 .run(function ($rootScope) {
-	$rootScope.data = {};
+	$rootScope.data = { message: "This is from the $rootScope." };
 })
 .controller("FirstCtrl", function ($scope) {
 
