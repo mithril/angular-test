@@ -1,16 +1,25 @@
-var myApp = angular.module('myApp', []);
+angular.module("MyApp", [])
+// The code below is for using the global scope, $rootScope
+.run(function ($rootScope) {
+	$rootScope.data = {};
+})
+.controller("FirstCtrl", function ($scope) {
 
-myApp.factory('Data',function () {
-	return {
-		message: "I am from the factory"
-	};
+})
+.controller("SecondCtrl", function ($scope) {
+
+})
+
+// The code below is for using the factory, Data
+.factory("Data", function () {
+	return { message: "This is from a factory." };
+})
+.controller("FactoryFirstCtrl", function ($scope, Data) {
+	$scope.data = Data;
+})
+.controller("FactorySecondCtrl", function ($scope, Data) {
+	$scope.data = Data;
 });
 
-function FirstCtrl ($scope, Data) {
-	$scope.data = Data;
-}
 
-function SecondCtrl ($scope, Data) {
-	$scope.data = Data;
 
-}
