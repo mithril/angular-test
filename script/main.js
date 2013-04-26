@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', []);
 
 myApp.factory ('Avengers', function () {
 	var Avengers = {};
-	avengers.cast =
+	Avengers.cast =
 	[
 		{
 			name:"Tony",
